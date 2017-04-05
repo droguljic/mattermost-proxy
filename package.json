@@ -1,0 +1,33 @@
+{
+  "name": "mattermost-proxy",
+  "version": "1.0.0-alpha",
+  "description": "Proxy for handling Mattermost authentication",
+  "keywords": [
+    "mattermost",
+    "proxy",
+    "auth",
+    "oidc",
+    "cookie"
+  ],
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.10",
+    "config": "^1.25.1",
+    "http-proxy": "^1.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "export NODE_ENV=development && nodemon lib/index.js | bunyan -o short",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Roguljic <droguljic@extensionengine.com>",
+  "license": "Apache-2.0"
+}
