@@ -15,8 +15,12 @@
   },
   "dependencies": {
     "bunyan": "^1.8.10",
+    "co": "^4.6.0",
     "config": "^1.25.1",
-    "http-proxy": "^1.16.2"
+    "http-proxy": "^1.16.2",
+    "iron": "^4.0.4",
+    "mongodb": "^2.2.25",
+    "verror": "^1.9.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
