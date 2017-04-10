@@ -6,3 +6,4 @@ npm-debug.log*
 *.pid
 *.seed
 .project
+config/local*
