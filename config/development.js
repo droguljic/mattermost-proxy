@@ -5,7 +5,7 @@ module.exports = {
   proxy: {
     target: {
       host: 'localhost',
-      port: 9000
+      port: 8065
     }
   },
   auth: {
@@ -25,6 +25,9 @@ module.exports = {
       },
       authParams: { redirect_uri: 'http://localhost:11000/auth/oidc/complete' }
     }
+  },
+  mattermost: {
+    api: { base: 'http://localhost:8065/api/v3' }
   },
   datastore: {
     mongo: {

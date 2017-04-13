@@ -1,6 +1,7 @@
 // Define exports
 
 module.exports = {
+  ignore: { paths: ['/favicon*', '/**/*.js', '/**/*.js.map'] },
   logging: {
     bunyan: {
       name: 'MM_PROXY',
@@ -22,11 +23,17 @@ module.exports = {
     }
   },
   mattermost: {
-    session: {
-      cookie: {
-        name: 'MMAUTHTOKEN',
-        options: { maxAge: 30 * 24 * 60 * 60 /* 30 days */ }
+    api: {
+      endpoint: {
+        user: {
+          create: { method: 'POST', url: '/users/create' },
+          login: { method: 'POST', url: '/users/login' }
+        }
       }
+    },
+    session: {
+      duration: 10 * 24 * 60 * 60, // 10 days, in seconds
+      cookie: { name: 'MMAUTHTOKEN' }
     }
   }
 };
