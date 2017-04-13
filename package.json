@@ -14,12 +14,20 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
+    "axios": "^0.16.1",
+    "boom": "^4.3.1",
     "bunyan": "^1.8.10",
     "co": "^4.6.0",
     "config": "^1.25.1",
+    "cookie": "^0.3.1",
     "http-proxy": "^1.16.2",
     "iron": "^4.0.4",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.snakecase": "^4.1.1",
+    "map-obj": "^2.0.0",
+    "minimatch": "^3.0.3",
     "mongodb": "^2.2.25",
+    "openid-client": "^1.8.0",
     "verror": "^1.9.0"
   },
   "devDependencies": {
