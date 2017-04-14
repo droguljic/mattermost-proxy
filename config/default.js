@@ -26,14 +26,20 @@ module.exports = {
     api: {
       endpoint: {
         user: {
+          initialLoad: { method: 'GET', url: '/users/initial_load' },
           create: { method: 'POST', url: '/users/create' },
           login: { method: 'POST', url: '/users/login' }
+        },
+        system: {
+          ping: { method: 'GET', url: '/system/ping' },
+          getConfig: { method: 'GET', url: '/config' },
+          updateConfig: { method: 'PUT', url: '/config' }
         }
       }
     },
     session: {
-      duration: 10 * 24 * 60 * 60, // 10 days, in seconds
       cookie: { name: 'MMAUTHTOKEN' }
-    }
+    },
+    system: {}
   }
 };

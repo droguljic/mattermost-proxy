@@ -27,7 +27,16 @@ module.exports = {
     }
   },
   mattermost: {
-    api: { base: 'http://localhost:8065/api/v3' }
+    api: {
+      base: 'http://localhost:8065/api/v3',
+      endpoint: {
+        system: {
+          ping: { baseURL: 'http://localhost:8065/api/v4' },
+          getConfig: { baseURL: 'http://localhost:8065/api/v4' },
+          updateConfig: { baseURL: 'http://localhost:8065/api/v4' }
+        }
+      }
+    }
   },
   datastore: {
     mongo: {
