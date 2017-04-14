@@ -1,7 +1,6 @@
 // Define exports
 
 module.exports = {
-  ignore: { paths: ['/favicon*', '/**/*.js', '/**/*.js.map'] },
   logging: {
     bunyan: {
       name: 'MM_PROXY',
@@ -11,10 +10,27 @@ module.exports = {
       ]
     }
   },
-  snapshot: {
-    cookie: { name: 'hnsh' }
+  url: {
+    rules: {
+      ignore: [
+        '/login',
+        '/**/system/ping',
+        '/**/users/initial_load',
+        '/**/users/login',
+        '/**/users/create',
+        '/favicon*',
+        '/**/*.js',
+        '/**/*.js.map',
+        '/**/*.png',
+        '/**/*.woff2'
+      ],
+      forbid: ['/signup_user_complete', '/signup_email', '/reset_password', '/**/users/send_password_reset']
+    }
   },
   auth: {
+    destination: {
+      cookie: { name: 'hnsh' }
+    },
     oidc: {
       callback: { pathname: '/auth/oidc/complete' },
       client: { grant_types: ['authorization_code'] },
