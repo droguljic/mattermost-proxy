@@ -34,6 +34,7 @@ class MongoConnection extends EventEmitter {
   create(name, settings) {
     return MongoClient.connect(settings.uri)
       .then((db) => {
+        Log.info(`Successfully connected to the [${name}] database`);
         this[name] = db;
         this.addListeners(name);
       })
@@ -43,7 +44,6 @@ class MongoConnection extends EventEmitter {
   }
 
   addListeners(name) {
-    Log.info(`Successfully connected to the [${name}] database`);
     this[name].on('error', (err) => Log.error(err, `Error occurred against the [${name}] database`));
   }
 
