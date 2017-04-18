@@ -2,6 +2,7 @@
 
 const EventEmitter = require('events');
 
+const Co = require('co');
 const Config = require('config');
 const Db = require('mongodb').Db;
 const MongoClient = require('mongodb').MongoClient;
@@ -10,6 +11,16 @@ const VError = require('verror');
 const Log = require('../logging').get('MONGO_CONNECTION');
 
 // Internal logic
+
+const purge = Co.wrap(function* (db) {
+  const collections = yield db.listCollections().toArray();
+  if (collections) {
+    for (let i = 0; i < collections.length; i++) { // eslint-disable-line no-plusplus
+      const collection = collections[i];
+      yield db.dropCollection(collection.name);
+    }
+  }
+});
 
 class MongoConnection extends EventEmitter {
 
@@ -37,6 +48,11 @@ class MongoConnection extends EventEmitter {
         Log.info(`Successfully connected to the [${name}] database`);
         this[name] = db;
         this.addListeners(name);
+        if (settings.fresh) {
+          return purge(db);
+        }
+
+        return undefined;
       })
       .catch((err) => {
         throw new VError(err, `Failed to connect to the [${name}] database`);
