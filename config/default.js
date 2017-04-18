@@ -12,30 +12,41 @@ module.exports = {
   },
   url: {
     rules: {
+      forbid: [
+        '/reset_password',
+        '/signup_user_complete',
+        '/signup_email',
+        '/**/users/create',
+        '/**/users/newpassword',
+        '/**/users/send_password_reset'
+      ],
       ignore: [
         '/login',
+        '/favicon*',
         '/**/system/ping',
         '/**/users/initial_load',
         '/**/users/login',
-        '/**/users/create',
-        '/favicon*',
         '/**/*.js',
         '/**/*.js.map',
         '/**/*.png',
         '/**/*.woff2'
-      ],
-      forbid: ['/signup_user_complete', '/signup_email', '/reset_password', '/**/users/send_password_reset']
+      ]
     }
   },
   auth: {
     destination: {
-      cookie: { name: 'hnsh' }
+      cookie: { name: 'mpdst' }
     },
     oidc: {
       callback: { pathname: '/auth/oidc/complete' },
       client: { grant_types: ['authorization_code'] },
       authParams: { scope: 'openid profile email' },
       cookie: { name: 'mpdcsn' }
+    }
+  },
+  datastore: {
+    mongo: {
+      main: { fresh: false }
     }
   },
   mattermost: {

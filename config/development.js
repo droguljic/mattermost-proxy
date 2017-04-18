@@ -26,6 +26,11 @@ module.exports = {
       authParams: { redirect_uri: 'http://localhost:11000/auth/oidc/complete' }
     }
   },
+  datastore: {
+    mongo: {
+      main: { uri: 'mongodb://127.0.0.1:27017/mmproxy' }
+    }
+  },
   mattermost: {
     api: {
       base: 'http://localhost:8065/api/v3',
@@ -36,11 +41,6 @@ module.exports = {
           updateConfig: { baseURL: 'http://localhost:8065/api/v4' }
         }
       }
-    }
-  },
-  datastore: {
-    mongo: {
-      main: { uri: 'mongodb://127.0.0.1:27017/mmproxy' }
     }
   },
   iron: { password: 'ClEuxpvoctPDI7KyDcNmTnznQNdLxolEhyxjhhHDEAQ' }
