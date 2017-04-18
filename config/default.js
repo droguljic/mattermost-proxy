@@ -55,7 +55,8 @@ module.exports = {
         user: {
           initialLoad: { method: 'GET', url: '/users/initial_load' },
           create: { method: 'POST', url: '/users/create' },
-          login: { method: 'POST', url: '/users/login' }
+          login: { method: 'POST', url: '/users/login' },
+          update: { method: 'POST', url: '/users/update' }
         },
         system: {
           ping: { method: 'GET', url: '/system/ping' },
