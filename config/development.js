@@ -1,3 +1,8 @@
+
+// Load modules
+
+const defer = require('config/defer').deferConfig;
+
 // Define exports
 
 module.exports = {
@@ -33,12 +38,12 @@ module.exports = {
   },
   mattermost: {
     api: {
-      base: 'http://localhost:8065/api/v3',
+      base: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v3`),
       endpoint: {
         system: {
-          ping: { baseURL: 'http://localhost:8065/api/v4' },
-          getConfig: { baseURL: 'http://localhost:8065/api/v4' },
-          updateConfig: { baseURL: 'http://localhost:8065/api/v4' }
+          ping: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
+          getConfig: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
+          updateConfig: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) }
         }
       }
     }
