@@ -7,12 +7,6 @@ const defer = require('config/defer').deferConfig;
 
 module.exports = {
   port: 11000,
-  proxy: {
-    target: {
-      host: 'localhost',
-      port: 8065
-    }
-  },
   auth: {
     oidc: {
       provider: {

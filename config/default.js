@@ -1,6 +1,14 @@
 // Define exports
 
 module.exports = {
+  host: 'localhost',
+  port: 9000,
+  proxy: {
+    target: {
+      host: 'localhost',
+      port: 8065
+    }
+  },
   logging: {
     bunyan: {
       name: 'MM_PROXY',
