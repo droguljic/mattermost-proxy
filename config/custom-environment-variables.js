@@ -1,6 +1,7 @@
 // Define exports
 
 module.exports = {
+  host: 'MP_HOST',
   port: 'MP_PORT',
   proxy: {
     target: {
