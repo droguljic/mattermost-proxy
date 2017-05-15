@@ -1,0 +1,20 @@
+apps:
+  - name      : mmp
+    script    : /var/www/mattermost-proxy/lib/index.js,
+    cwd       : /var/www/mattermost-proxy
+    exec_mode : cluster
+    instances : 0
+    env       :
+      NODE_ENV    : '{integration || stage || production}',
+      MP_HOST     : '{application-host}',
+      MP_PORT     : '{application-port}',
+      MP_TARGET_HOST : '{mattermost-host}',
+      MP_TARGET_PORT   : '{mattermost-port}',
+      MP_AUTH_DEST_CN   : '{destination-cookie}',
+      MP_AUTH_OIDC_CS: '{identity-provider-oauth2-client-secret}',
+      MP_AUTH_OIDC_RDURI: '{application-base-uri}/auth/oidc/complete',
+      MP_AUTH_OIDC_CN      : '{oauth2-state-cookie}',
+      MP_MDB_MAIN_URI    : '{mongodb-connection-uri}/mmproxy{?options}',
+      MP_MMS_CORS_ORIGINS    : '{allowed-origins}',
+      MP_MMS_CREDS_DEST   : '{root-credentials-destination}',
+      MP_IRON_PASSWD   : '{iron-password}'
