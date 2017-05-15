@@ -42,6 +42,7 @@ module.exports = {
     }
   },
   auth: {
+    check: { pathname: '/proxy/auth/check' },
     destination: {
       cookie: { name: 'mpdst' }
     },
