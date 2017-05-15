@@ -1,6 +1,6 @@
 {
   "name": "mattermost-proxy",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha.1",
   "description": "Proxy for handling Mattermost authentication",
   "keywords": [
     "mattermost",
