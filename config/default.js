@@ -76,6 +76,8 @@ module.exports = {
     session: {
       cookie: { name: 'MMAUTHTOKEN' }
     },
-    system: {}
+    system: {
+      cors: { origins: '' }
+    }
   }
 };

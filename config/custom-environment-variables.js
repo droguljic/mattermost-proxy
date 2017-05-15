@@ -24,5 +24,10 @@ module.exports = {
       main: { uri: 'MP_MDB_MAIN_URI' }
     }
   },
+  mattermost: {
+    system: {
+      cors: { origins: 'MP_MMS_CORS_ORIGINS' }
+    }
+  },
   iron: { password: 'MP_IRON_PASSWD' }
 };
