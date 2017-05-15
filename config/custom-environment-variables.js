@@ -26,7 +26,8 @@ module.exports = {
   },
   mattermost: {
     system: {
-      cors: { origins: 'MP_MMS_CORS_ORIGINS' }
+      cors: { origins: 'MP_MMS_CORS_ORIGINS' },
+      credentials: { destination: 'MP_MMS_CREDS_DEST' }
     }
   },
   iron: { password: 'MP_IRON_PASSWD' }
