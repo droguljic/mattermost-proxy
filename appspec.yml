@@ -2,19 +2,20 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/mattermost-proxy/
+    destination: /opt/notredame/apps/mattermost-proxy/
+    owner: nd-deploy
 permissions:
-  - object: /var/www/mattermost-prox/bin
+  - object: /opt/notredame
     pattern: '**'
-    owner: root
-    group: root
+    owner: nd-deploy
+    group: nd-deploy
     mode: 755
 hooks:
   ApplicationStop:
     - location: bin/application-stop.sh
       timeout: 3000
-      runas: root
+      runas: nd-deploy
   ApplicationStart:
     - location: bin/application-start.sh
       timeout: 5000
-      runas: root
+      runas: nd-deploy
