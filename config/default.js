@@ -63,9 +63,17 @@ module.exports = {
       endpoint: {
         user: {
           initialLoad: { method: 'GET', url: '/users/initial_load' },
-          create: { method: 'POST', url: '/users/create' },
           login: { method: 'POST', url: '/users/login' },
-          update: { method: 'POST', url: '/users/update' }
+          create: { method: 'POST', url: '/users/create' },
+          update: { method: 'POST', url: '/users/update' },
+          setImage: { method: 'POST', url: '/users/{user_id}/image' },
+          teams: { method: 'GET', url: '/users/{user_id}/teams' }
+        },
+        team: {
+          create: { method: 'POST', url: '/teams' },
+          getByName: { method: 'GET', url: '/teams/name/{name}' },
+          exists: { method: 'GET', url: '/teams/name/{name}/exists' },
+          addUser: { method: 'POST', url: '/teams/{team_id}/members' }
         },
         system: {
           ping: { method: 'GET', url: '/system/ping' },

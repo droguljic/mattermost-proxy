@@ -34,6 +34,16 @@ module.exports = {
     api: {
       base: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v3`),
       endpoint: {
+        user: {
+          updateImage: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
+          teams: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) }
+        },
+        team: {
+          create: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
+          getByName: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
+          exists: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
+          addUser: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) }
+        },
         system: {
           ping: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
           getConfig: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
