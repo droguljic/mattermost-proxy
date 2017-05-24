@@ -1,13 +1,14 @@
+// Load modules
+
+const defer = require('config/defer').deferConfig;
+
 // Define exports
 
 module.exports = {
   host: 'localhost',
   port: 9000,
   proxy: {
-    target: {
-      host: 'localhost',
-      port: 8065
-    }
+    target: { host: 'localhost', port: 8065 }
   },
   logging: {
     bunyan: {
@@ -60,25 +61,26 @@ module.exports = {
   },
   mattermost: {
     api: {
+      base: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}`),
       endpoint: {
         user: {
-          initialLoad: { method: 'GET', url: '/users/initial_load' },
-          login: { method: 'POST', url: '/users/login' },
-          create: { method: 'POST', url: '/users/create' },
-          update: { method: 'POST', url: '/users/update' },
-          setImage: { method: 'POST', url: '/users/{user_id}/image' },
-          teams: { method: 'GET', url: '/users/{user_id}/teams' }
+          initialLoad: { method: 'GET', url: '/api/v3/users/initial_load' },
+          login: { method: 'POST', url: '/api/v4/users/login' },
+          create: { method: 'POST', url: '/api/v3/users/create' },
+          update: { method: 'POST', url: '/api/v3/users/update' },
+          setImage: { method: 'POST', url: '/api/v4/users/{user_id}/image' },
+          teams: { method: 'GET', url: '/api/v4/users/{user_id}/teams' }
         },
         team: {
-          create: { method: 'POST', url: '/teams' },
-          getByName: { method: 'GET', url: '/teams/name/{name}' },
-          exists: { method: 'GET', url: '/teams/name/{name}/exists' },
-          addUser: { method: 'POST', url: '/teams/{team_id}/members' }
+          create: { method: 'POST', url: '/api/v4/teams' },
+          getByName: { method: 'GET', url: '/api/v4/teams/name/{name}' },
+          exists: { method: 'GET', url: '/api/v4/teams/name/{name}/exists' },
+          addUser: { method: 'POST', url: '/api/v4/teams/{team_id}/members' }
         },
         system: {
-          ping: { method: 'GET', url: '/system/ping' },
-          getConfig: { method: 'GET', url: '/config' },
-          updateConfig: { method: 'PUT', url: '/config' }
+          ping: { method: 'GET', url: '/api/v4/system/ping' },
+          getConfig: { method: 'GET', url: '/api/v4/config' },
+          updateConfig: { method: 'PUT', url: '/api/v4/config' }
         }
       }
     },
