@@ -1,8 +1,4 @@
 
-// Load modules
-
-const defer = require('config/defer').deferConfig;
-
 // Define exports
 
 module.exports = {
@@ -28,28 +24,6 @@ module.exports = {
   datastore: {
     mongo: {
       main: { uri: 'mongodb://127.0.0.1:27017/mmproxy' }
-    }
-  },
-  mattermost: {
-    api: {
-      base: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v3`),
-      endpoint: {
-        user: {
-          updateImage: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
-          teams: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) }
-        },
-        team: {
-          create: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
-          getByName: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
-          exists: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
-          addUser: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) }
-        },
-        system: {
-          ping: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
-          getConfig: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) },
-          updateConfig: { baseURL: defer((cfg) => `http://${cfg.proxy.target.host}:${cfg.proxy.target.port}/api/v4`) }
-        }
-      }
     }
   },
   iron: { password: 'ClEuxpvoctPDI7KyDcNmTnznQNdLxolEhyxjhhHDEAQ' }

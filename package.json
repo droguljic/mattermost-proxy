@@ -20,6 +20,7 @@
     "co": "^4.6.0",
     "config": "^1.25.1",
     "cookie": "^0.3.1",
+    "form-data": "^2.1.4",
     "http-proxy": "^1.16.2",
     "iron": "^4.0.4",
     "lodash.camelcase": "^4.3.0",
@@ -28,6 +29,7 @@
     "minimatch": "^3.0.3",
     "mongodb": "^2.2.25",
     "openid-client": "^1.8.0",
+    "valid-url": "^1.0.9",
     "verror": "^1.9.0"
   },
   "devDependencies": {
