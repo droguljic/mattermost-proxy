@@ -5,7 +5,7 @@ apps:
     exec_mode : cluster
     instances : 0
     env       :
-      NODE_ENV            : '{integration || stage || production}'
+      NODE_ENV            : '{integration || staging || production}'
       MP_HOST             : '{application-host}'
       MP_PORT             : '{application-port}'
       MP_TARGET_HOST      : '{mattermost-host}'
