@@ -68,14 +68,14 @@ module.exports = {
           login: { method: 'POST', url: '/api/v4/users/login' },
           create: { method: 'POST', url: '/api/v3/users/create' },
           update: { method: 'POST', url: '/api/v3/users/update' },
-          setImage: { method: 'POST', url: '/api/v4/users/{user_id}/image' },
-          teams: { method: 'GET', url: '/api/v4/users/{user_id}/teams' }
+          setImage: { method: 'POST', url: '/api/v4/users/{userId}/image' },
+          teams: { method: 'GET', url: '/api/v4/users/{userId}/teams' }
         },
         team: {
           create: { method: 'POST', url: '/api/v4/teams' },
           getByName: { method: 'GET', url: '/api/v4/teams/name/{name}' },
           exists: { method: 'GET', url: '/api/v4/teams/name/{name}/exists' },
-          addUser: { method: 'POST', url: '/api/v4/teams/{team_id}/members' }
+          addUser: { method: 'POST', url: '/api/v4/teams/{teamId}/members' }
         },
         system: {
           ping: { method: 'GET', url: '/api/v4/system/ping' },
