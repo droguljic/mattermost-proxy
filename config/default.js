@@ -27,6 +27,9 @@ module.exports = {
         '/signup_email',
         '/**/users/create',
         { method: 'POST', url: '/**/users' },
+        { method: 'PUT', url: '/**/users/*' },
+        '/**/users/newimage',
+        { method: 'POST', url: '/**/users/*/image' },
         '/**/users/newpassword',
         '/**/users/password/reset',
         '/**/users/*/password',
@@ -46,7 +49,7 @@ module.exports = {
         '/**/*.png',
         '/**/*.woff2'
       ],
-      inspect: ['/**/users/*/patch', { method: 'PUT', url: '/**/users/*' }]
+      inspect: ['/**/users/*/patch']
     }
   },
   auth: {
