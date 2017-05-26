@@ -45,7 +45,8 @@ module.exports = {
         '/**/*.js.map',
         '/**/*.png',
         '/**/*.woff2'
-      ]
+      ],
+      inspect: ['/**/users/*/patch', { method: 'PUT', url: '/**/users/*' }]
     }
   },
   auth: {
