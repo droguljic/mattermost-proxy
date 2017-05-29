@@ -14,8 +14,8 @@ module.exports = {
       cookie: { name: 'MP_AUTH_DEST_CN' }
     },
     oidc: {
-      client: { client_secret: 'MP_AUTH_OIDC_CS' },
-      authParams: { redirect_uri: 'MP_AUTH_OIDC_RDURI' },
+      client: { clientSecret: 'MP_AUTH_OIDC_CS' },
+      authParams: { redirectUri: 'MP_AUTH_OIDC_RDURI' },
       cookie: { name: 'MP_AUTH_OIDC_CN' }
     }
   },
