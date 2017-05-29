@@ -1,4 +1,7 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
-# Stop the application using pm2, use delete to pickup ecosystem.yml changes, if any, during startup
-pm2 delete ecosystem.yml
+# Positon into direcotry with ecosystem file
+cd /opt/notredame/apps/ecosystem/
+
+# Stop the application gracefully using pm2
+pm2 stop ecosystem.yml

@@ -14,8 +14,8 @@ hooks:
   ApplicationStop:
     - location: bin/application-stop.sh
       timeout: 3000
-      runas: nd-deploy
+      runas: root
   ApplicationStart:
     - location: bin/application-start.sh
       timeout: 5000
-      runas: nd-deploy
+      runas: root
