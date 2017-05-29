@@ -15,5 +15,10 @@ module.exports = {
         idTokenSignedResponseAlg: 'HS256'
       }
     }
+  },
+  mattermost: {
+    session: {
+      cookie: { options: { domain: '.nd.edu' } }
+    }
   }
 };
