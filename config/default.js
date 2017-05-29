@@ -59,7 +59,7 @@ module.exports = {
     },
     oidc: {
       callback: { pathname: '/auth/oidc/complete' },
-      client: { grant_types: ['authorization_code'] },
+      client: { grantTypes: ['authorization_code'] },
       authParams: { scope: 'openid profile email' },
       cookie: { name: 'mpdcsn' }
     }
