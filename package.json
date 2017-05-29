@@ -9,6 +9,10 @@
     "oidc",
     "cookie"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/droguljic/mattermost-proxy"
+  },
   "main": "lib/index.js",
   "engines": {
     "node": ">=6.0.0"
